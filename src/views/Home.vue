@@ -1,9 +1,9 @@
  <template>
   <div class="home">
-    <h1 class="title">Todo List Vue Application</h1>
+    <h1 class="title has-text-centered">Todo List Vue Application</h1>
 
     <hr />
-    <div class="column">
+    <div class="columns">
       <div class="column is-3 is-offset-3">
         <form action="">
           <h2 class="subtitle">Add task</h2>
@@ -64,6 +64,33 @@
         </form>
       </div>
     </div>
+
+    <div class="columns">
+      <div class="column is-6">
+        <h2 class="subtitle">To Do</h2>
+
+        <div class="todo">
+          <div class="card">
+            <div class="card-content">Note</div>
+
+            <footer class="card-footer">
+              <a  class="card-footer-item">Complete</a>
+            </footer>
+          </div>
+        </div>
+
+      </div>
+      <div class="column is-6">
+        <h2 class="subtitle">Complete</h2>
+
+        <div class="todo">
+          <div class="card">
+            <div class="card-content">Note</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -75,3 +102,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.select, select {
+  width: 100%;
+}
+.card {
+  margin-bottom: 20px;
+}
+</style
