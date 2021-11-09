@@ -1,4 +1,5 @@
  <template>
+ <!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
   <div class="home">
     <h1 class="title has-text-centered">Todo List Vue Application</h1>
 
@@ -70,8 +71,8 @@
         <h2 class="subtitle">To Do</h2>
 
         <div class="todo">
-          <div class="card">
-            <div class="card-content">Note</div>
+          <div class="card" v-for="todo in todos" v-if="todo.complete === 'No'" v-bind:key="todo.id">
+            <div class="card-content">{{todo.note}}</div>
 
             <footer class="card-footer">
               <a  class="card-footer-item">Complete</a>
@@ -84,8 +85,8 @@
         <h2 class="subtitle">Complete</h2>
 
         <div class="todo">
-          <div class="card">
-            <div class="card-content">Note</div>
+          <div class="card" v-for="todo in todos" v-if="todo.complete === 'Yes'" v-bind:key="todo.id">
+            <div class="card-content">{{todo.note}}</div>
 
           </div>
         </div>
@@ -95,11 +96,29 @@
 </template>
 
 <script>
+
+import axios from 'axios'
+
 export default {
   name: "Home",
   data() {
-    return {};
+    return {
+      todos: []
+
+    };
   },
+  mounted () {
+    this.getTodos()
+  }, 
+  methods: {
+    getTodos() {
+      axios({
+        method: 'get',
+        url: 'https://nicholas-to-to-django-api.herokuapp.com/todo_list',
+
+      }).then(response => this.todos = response.data)
+    }
+  }
 };
 </script>
 
