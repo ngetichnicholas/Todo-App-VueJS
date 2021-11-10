@@ -9,4 +9,7 @@
 body {
   background-color: rgb(211, 229, 243);
 }
+.btns {
+  margin-bottom: 1rem;
+}
 </style>

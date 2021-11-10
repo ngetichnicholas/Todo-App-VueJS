@@ -89,7 +89,11 @@
             <div class="card-content">
               <h2 class="subtitle has-text-primary">{{todo.title}}</h2>
               <p>{{todo.note}}</p>
+              <div class="btns">
+                <button class="button is-danger">Delete</button>
+              </div>
             </div>
+
 
           </div>
         </div>
@@ -177,5 +181,6 @@ export default {
 .card {
   margin-bottom: 20px;
 }
+
 
 </style
