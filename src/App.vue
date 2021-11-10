@@ -6,4 +6,7 @@
 
 <style lang="scss">
 @import '../node_modules/bulma'; 
+body {
+  background-color: rgb(211, 229, 243);
+}
 </style>
