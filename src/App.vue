@@ -1,15 +1,25 @@
 <template>
   <div id="app">
-    <router-view/>
+    <nav class="navbar navbar-expand navbar-dark bg-success">
+      <router-link to="/" class="navbar-brand">Home</router-link>
+      <div class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <router-link to="/todos" class="nav-link">Tasks</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/add" class="nav-link">Add Task</router-link>
+        </li>
+      </div>
+    </nav>
+
+    <div class="container mt-3">
+      <router-view />
+    </div>
   </div>
 </template>
 
-<style lang="scss">
-@import '../node_modules/bulma'; 
-body {
-  background-color: rgb(211, 229, 243);
-}
-.btns {
-  margin-bottom: 1rem;
-}
-</style>
+<script>
+export default {
+  name: "app"
+};
+</script>
