@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand navbar-dark bg-success">
-      <router-link to="/" class="navbar-brand">Home</router-link>
+      <router-link to="/todos" class="navbar-brand">Home</router-link>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
           <router-link to="/todos" class="nav-link">Tasks</router-link>
