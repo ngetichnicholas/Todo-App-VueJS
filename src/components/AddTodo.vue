@@ -11,7 +11,8 @@
 
           <div class="field">
             <label class="label" for="">Title</label>
-            <input v-model="title" type="text" class="form-control" />
+            <input id="title" v-model="title" v-on:keyup="validateTitle()" type="text" class="form-control" />
+            <p id="hide" class="hide text-danger">Only Mr and Mrs allowed</p>
           </div>
 
           <div class="field">
@@ -117,6 +118,20 @@ export default {
           });
       }
     },
+     validateTitle: function() {
+  var x = document.getElementById("title");
+  if(x.value.toUpperCase() != "MR" && x.value.toUpperCase() != "MRS") {
+      document.getElementById("hide").style.display = 'block';
+
+  }
+  }
   },
 };
 </script>
+<style>
+.hide {
+  display: none;
+}
+</style>
+
+
